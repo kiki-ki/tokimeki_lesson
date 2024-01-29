@@ -8,11 +8,11 @@ end
 
 # def fizz_buzz(n)
 #   if n % (3 * 5) == 0
-#     FIZZ + BUZZ
+#     "FizzBuzz"
 #   elsif n % 3 == 0
-#     FIZZ
+#     "Fizz"
 #   elsif n % 5 == 0
-#     BUZZ
+#     "Buzz"
 #   else
 #     n.to_s
 #   end
