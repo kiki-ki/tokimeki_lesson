@@ -1,5 +1,12 @@
 require_relative 'tic_tac_toe'
 
+def get_row_num
+  print "プレイする盤面の目の数を入力してください(1以上の数字): "
+  row_num = gets.chomp.to_i
+  get_row_num if row_num.zero?
+  row_num
+end
+
 def get_player_name(player_number)
   print "Player#{player_number}の名前を入力してください: "
   gets.chomp
@@ -19,7 +26,7 @@ end
 
 def format_row(row, row_index, max_cell_width)
   row.map.with_index { |cell, col_index|
-    display = cell.nil? ? (row_index * TicTacToe::ROW_NUM + col_index).to_s : cell
+    display = cell.nil? ? (row_index * row.size + col_index).to_s : cell
     display.center(max_cell_width)
   }.join("|")
 end
@@ -29,7 +36,7 @@ def row_string_length(row, max_cell_width)
 end
 
 def request_player_move(game)
-  print "(#{game.current_mark}): #{game.current_player_name}さんの手番です。マークする位置を選んでください（0〜#{TicTacToe::ROW_NUM**2 - 1}の数字）: "
+  print "(#{game.current_mark}): #{game.current_player_name}さんの手番です。マークする位置を選んでください（0〜#{game.row_num**2 - 1}の数字）: "
   gets.chomp.to_i
 end
 
@@ -37,8 +44,9 @@ def result_message(winner)
   winner ? "\n#{winner}さんの勝利です！" : "\n引き分けです。"
 end
 
+row_num = get_row_num
 players = get_player_names
-game = TicTacToe.new(players)
+game = TicTacToe.new(row_num, players)
 
 until game.game_over?
   system "clear"
