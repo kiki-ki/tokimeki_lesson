@@ -29,23 +29,25 @@ def row_string_length(row, max_cell_width)
 end
 
 def request_player_move(game)
-  print "(#{game.current_mark}): #{game.players[game.current_player]}さんの手番です。マークする位置を選んでください（0〜#{TicTacToe::ROW_NUM**2 - 1}の数字）: "
+  print "(#{game.current_mark}): #{game.current_player_name}さんの手番です。マークする位置を選んでください（0〜#{TicTacToe::ROW_NUM**2 - 1}の数字）: "
   gets.chomp.to_i
+end
+
+def result_message(winner)
+  winner ? "\n#{winner}さんの勝利です！" : "\n引き分けです。"
 end
 
 players = get_player_names
 game = TicTacToe.new(players)
 
 until game.game_over?
+  system "clear"
   puts "\n現在の盤面:"
   display_board(game)
   position = request_player_move(game)
-  unless game.play_move(position)
-    puts "不正な値です。再入力してください"
-    redo
-  end
+  redo unless game.play_move(position)
 end
 
 puts "\n最終盤面:"
 display_board(game)
-puts game.result_message
+puts result_message(game.winner)

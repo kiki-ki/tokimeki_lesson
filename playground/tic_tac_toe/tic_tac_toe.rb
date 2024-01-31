@@ -25,6 +25,10 @@ class TicTacToe
     MARKS[@current_player]
   end
 
+  def current_player_name
+    players[current_player]
+  end
+
   def game_over?
     winner || board_full?
   end
@@ -32,10 +36,6 @@ class TicTacToe
   def max_cell_width
     max_num_length = (ROW_NUM * ROW_NUM - 1).to_s.length
     [max_num_length, MARKS.map(&:length).max].max + 2
-  end
-
-  def result_message
-    winner ? "\n#{winner}の勝利です！" : "\n引き分けです。"
   end
 
   private
@@ -49,7 +49,7 @@ class TicTacToe
   end
 
   def update_winner(x, y)
-    @winner = players[current_player] if winning_move?(x, y)
+    @winner = current_player_name if winning_move?(x, y)
   end
 
   def switch_current_player
