@@ -31,3 +31,7 @@ ruby ./test_dog.rb -n test_call
 ```sh
 ruby ./test_dog.rb -n test_trick
 ```
+
+## Demo
+
+![dog](https://github.com/kiki-ki/tokimeki_lesson/assets/49654997/b9b9b0b6-cb1b-4fbc-ac6d-9b9838a7784d)
