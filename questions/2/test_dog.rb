@@ -29,8 +29,13 @@ class TestDog < Test::Unit::TestCase
   def test_trick
     dog = Dog.new(name: 'pochi', kind: :chihuahua)
 
+
     # :hands をお願いすると成功すること
-    assert_nothing_raised(StandardError) { Dog.new(name: 'pochi', kind: :chihuahua).trick(:hands) }
+    file = File.open("./tricks/hands.txt")
+    body = file.read
+    file.close
+
+    assert_equal(body, dog.trick(:hands))
 
     # 対応していないtrickをお願いすると失敗すること
     assert_raise(ArgumentError) { dog.trick(:short_conte) }
