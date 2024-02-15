@@ -1,6 +1,6 @@
 function drawRainbow(containerId, colors, sizeIncrement) {
   const rainbowContainer = document.getElementById(containerId);
-  const baseSize = 100; // 1層目のサイズ
+  const baseSize = 20; // 1層目のサイズ
 
   for (let i = 0; i < colors.length; i++) {
       let circle = document.createElement('div');
