@@ -1,0 +1,32 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  gap: 40px;
+  background-color: #f0f0f0;
+}
+
+.name {
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.circle {
+  /* 図形のサイズを設定 (横) */
+  width: 100px;
+  /* 図形のサイズを設定 (縦) */
+  height: 100px;
+  /* 図形の色を設定 */
+  background-color: #3498db;
+  /* 円にする (角を丸める) */
+  border-radius: 50%;
+}
+
+.layer {
+  /* 絶対位置指定 */
+  position: absolute;
+  /* 角丸 */
+  border-radius: 50%;
+}
