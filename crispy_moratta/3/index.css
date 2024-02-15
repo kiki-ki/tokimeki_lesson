@@ -4,14 +4,14 @@ body {
   justify-content: center;
   align-items: center;
   height: 400px;
-  gap: 800px;
+  gap: 100px;
   background-color: #f0f0f0;
 }
 
 .name {
-  font-size: 20px;
+  font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
-  font-weight: 200;
+  font-weight: 300;
   letter-spacing: 0.2ch;
 }
 
