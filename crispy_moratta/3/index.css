@@ -1,0 +1,38 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  gap: 100px;
+  background-color: #f0f0f0;
+}
+
+.name {
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.2ch;
+}
+
+.circle {
+  /* 図形のサイズを設定 (横) */
+  width: 100px;
+  /* 図形のサイズを設定 (縦) */
+  height: 100px;
+  /* 図形の色を設定 */
+  background-color: #cfcfcf;
+  /* 円にする (角を丸める) */
+  border-radius: 50%;
+
+  border: 10px;
+  border-style: solid;
+  border-color: rgb(237, 77, 45);
+}
+
+.layer {
+  /* 絶対位置指定 */
+  position: absolute;
+  /* 角丸 */
+  border-radius: 50%;
+}
