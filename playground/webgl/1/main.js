@@ -23,10 +23,10 @@ function animate() {
   cube.rotation.x += 0.01;
   cube.rotation.y += 0.01;
 
-  // cube.scale.x += 0.01;
-  // cube.scale.y += 0.01;
+  cube.scale.x += 0.001;
+  cube.scale.y += 0.001;
 
-  positionX += 0.01;
+  positionX += 0.00001;
   cube.translateX(positionX);
 
   renderer.render(scene, camera);
